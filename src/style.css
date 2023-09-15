@@ -1,0 +1,224 @@
+:root {
+  --dark-color: #000;
+  --dark-opacity1-color: rgba(0, 0, 0, 0.1);
+  --dark-opacity4-color: rgba(0, 0, 0, 0.4);
+  --dark-opacity7-color: rgba(0, 0, 0, 0.7);
+  --white-color: #fff;
+  --light-gray-color: #f8f8f8;
+  /* --light-opacity7-color: rgba(255, 255, 255, 0.7); */
+}
+
+/* reset */
+html {
+  font-size: 62.5%;
+}
+body,
+input {
+  font-family: "Lato", sans-serif;
+}
+body {
+  margin: 0;
+  background-color: var(--light-gray-color);
+  color: var(--dark-color);
+  width: 100vw;
+  height: 100vh;
+}
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+h1 {
+  font-weight: normal;
+  margin: 0;
+}
+dl,
+dd,
+p {
+  margin: 0;
+}
+button,
+input {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+button {
+  cursor: pointer;
+}
+em {
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+img {
+  vertical-align: top;
+}
+fieldset {
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+}
+
+#phone {
+  display: flex;
+  flex-direction: column;
+  width: 382px;
+  height: 844px;
+  border: solid 2rem var(--dark-color);
+  border-radius: 6rem;
+  padding: 2.2rem 2rem 2.4rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 전체 input 영역 */
+.modal form input,
+#todo-form input {
+  width: 100%;
+  padding: 1.4rem 2rem;
+  border-radius: 5rem;
+  border: solid 0.1rem var(--dark-opacity4-color);
+  color: var(--dark-color);
+  margin-right: 0.8rem;
+}
+.modal form input::placeholder,
+#todo-form input::placeholder {
+  color: var(--dark-opacity4-color);
+}
+.modal form input:focus,
+#todo-form input:focus {
+  border: solid 0.1rem var(--dark-color);
+  outline: none;
+}
+.modal form button,
+#todo-form button {
+  padding: 1.4rem 2.4rem;
+  border-radius: 5rem;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+}
+.modal form button:hover,
+#todo-form button:hover {
+  background-color: var(--dark-opacity7-color);
+}
+
+/* 로그인 입력창 */
+.none {
+  display: none !important;
+}
+.login {
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border-radius: 4rem;
+  width: calc(100% - 6.4rem);
+  height: 100%;
+  background-color: var(--dark-opacity7-color);
+  padding: 0rem 3.2rem;
+}
+.modal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 3.2rem 2.4rem 2.4rem;
+  background-color: var(--white-color);
+  border-radius: 4rem;
+}
+.modal form {
+  display: flex;
+  margin-top: 5.6rem;
+}
+
+/* 시간 & 날씨 */
+.info {
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+}
+
+/* profile */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.8rem 0rem 1.6rem;
+  font-size: 1.4rem;
+}
+.profile div:first-child {
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 0.8rem;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  font-size: 2.4rem;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* todo-list 영역 */
+.todo-list {
+  height: 100%;
+  padding: 0rem 0.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.todo-list li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+  margin-top: 1rem;
+}
+.todo-list li span {
+  font-size: 1.2rem;
+  color: var(--dark-opacity4-color);
+}
+.todo-list li form {
+  display: flex;
+  align-items: center;
+  width: 75%;
+  padding: 1.6rem;
+  border-radius: 2rem 2rem 0rem 2rem;
+  font-size: 1.6rem;
+  background-color: var(--dark-opacity1-color);
+  justify-content: space-between;
+}
+.todo-list li form label {
+  width: 85%;
+}
+.todo-check {
+  width: 2rem;
+  height: 2rem;
+  border: solid 0.1rem var(--dark-color);
+  border-radius: 100%;
+}
+
+/* todo-input영역 */
+#todo-form {
+  display: flex;
+  padding-top: 2rem;
+}

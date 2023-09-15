@@ -3,7 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
     <title>Moono-todo</title>
   </head>
-  <body></body>
+  <body>
+    <div id="phone">
+      <header class="info">
+        <p class="clock"></p>
+        <p class="weather">날씨표시</p>
+      </header>
+      <div class="none login">
+        <div class="modal">
+          <img src="./src/img/name-title.svg" />
+          <form id="name-form">
+            <input type="text" placeholder="이름을 입력해주세요." />
+            <button>Enter</button>
+          </form>
+        </div>
+      </div>
+      <div class="profile">
+        <div>혜</div>
+        <div class="name">your name</div>
+      </div>
+      <ul class="todo-list">
+        <li>
+          <span>12:34</span>
+          <form>
+            <label>todo 입력하기</label>
+            <input class="todo-check" type="checkbox" name="todo" />
+          </form>
+        </li>
+      </ul>
+      <form id="todo-form">
+        <input
+          type="text"
+          name="todo-input"
+          placeholder="todo 내용을 입력해주세요."
+        />
+        <button>Enter</button>
+      </form>
+    </div>
+    <script src="./src/todo.js"></script>
+    <script src="./src/color.js"></script>
+    <script src="./src/header.js"></script>
+  </body>
 </html>
