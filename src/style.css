@@ -184,8 +184,8 @@ fieldset {
   padding: 0rem 0.4rem;
   overflow-y: auto;
   display: flex;
-  flex-direction: column;
-  justify-content: end;
+  flex-direction: column-reverse;
+  /* justify-content: end; */
 }
 /* .todo-list::-webkit-scrollbar {
   display: none;
@@ -242,6 +242,20 @@ fieldset {
   height: 2rem;
   border-radius: 100%;
   background-color: var(--dark-color);
+}
+.done div button:before {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10rem;
+  border: 0.15rem solid red; */
+
+  border-bottom: 0.15rem solid var(--white-color);
+  position: absolute;
+  content: "";
+  width: 30%;
+  height: 50%;
+  transform: rotateZ("45%");
 }
 .done div button:hover {
   background-color: var(--dark-opacity7-color);

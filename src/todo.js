@@ -36,6 +36,8 @@ const paintTodo = (todoObj) => {
 
   const parsedTodos = JSON.parse(getTodos);
 
+  const firstLi = todoList.querySelector("li:first-child");
+
   // 시간 불러오기
   if (parsedTodos && parsedTodos.length === todos.length) {
     span.innerText = todoObj.time;
@@ -61,7 +63,12 @@ const paintTodo = (todoObj) => {
   li.append(span, div);
   div.append(p, button);
 
-  todoList.appendChild(li);
+  if (firstLi) {
+    // li 생성할 때 스크롤 하단 고정위해서 제일 처음에 있는 li보다 위에 생성한다.
+    todoList.insertBefore(li, firstLi);
+  } else {
+    todoList.appendChild(li);
+  }
 };
 
 // todo done 관리하기
@@ -109,7 +116,7 @@ const handleTodoSubmit = (e) => {
     id: Date.now(),
   };
   paintTodo(todoObj);
-  todos.push(todoObj);
+  todos = [...todos, todoObj];
   localTodos();
 };
 
