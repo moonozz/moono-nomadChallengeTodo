@@ -69,6 +69,9 @@ const paintTodo = (todoObj) => {
   } else {
     todoList.appendChild(li);
   }
+
+  // li 생성시마다 스크롤 제일 아래로 내려주기
+  todoList.scrollTop = todoList.scrollHeight;
 };
 
 // todo done 관리하기
@@ -132,4 +135,5 @@ if (getTodos) {
 }
 
 todoForm.addEventListener("submit", handleTodoSubmit);
+// todoForm.addEventListener("submit", handleTodoSubmit);
 todoCheckBtn.addEventListener("click", doneTodo);
