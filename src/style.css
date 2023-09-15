@@ -180,24 +180,28 @@ fieldset {
 
 /* todo-list 영역 */
 .todo-list {
-  height: 100%;
+  height: calc(100% - 4rem - 8.8rem - 6.6rem);
   padding: 0rem 0.4rem;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: end;
 }
-.todo-list li {
+/* .todo-list::-webkit-scrollbar {
+  display: none;
+} */
+.todo-li {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: end;
   margin-top: 1rem;
 }
-.todo-list li span {
+.todo-li span {
   font-size: 1.2rem;
   color: var(--dark-opacity4-color);
 }
-.todo-list li div {
+.todo-li div {
   display: flex;
   align-items: center;
   width: 75%;
@@ -207,29 +211,42 @@ fieldset {
   background-color: var(--dark-opacity1-color);
   justify-content: space-between;
 }
-.todo-list li div p {
+.todo-li div p {
   width: 85%;
 }
-.done {
+.done div p {
   color: var(--dark-opacity4-color);
   text-decoration-color: var(--dark-opacity4-color);
   text-decoration-line: line-through;
 }
-.todo-check {
+/* .done div p:before {
+  border-bottom: 0.1rem solid var(--dark-opacity4-color);
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 50%;
+} */
+
+.todo-li div button {
   width: 2rem;
   height: 2rem;
   border: solid 0.1rem var(--dark-color);
   border-radius: 100%;
 }
-.todo-checked {
+.todo-li div button:hover {
+  border: solid 0.2rem var(--dark-color);
+}
+.done div button {
+  position: relative;
   width: 2rem;
   height: 2rem;
   border-radius: 100%;
   background-color: var(--dark-color);
 }
-/* .todo-check:checked {
-  background-color: var(--dark-color);
-} */
+.done div button:hover {
+  background-color: var(--dark-opacity7-color);
+  border: solid 0.1rem var(--dark-opacity7-color);
+}
 
 /* todo-input영역 */
 #todo-form {
