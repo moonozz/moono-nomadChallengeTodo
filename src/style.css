@@ -185,11 +185,7 @@ fieldset {
   overflow-y: auto;
   display: flex;
   flex-direction: column-reverse;
-  /* justify-content: end; */
 }
-/* .todo-list::-webkit-scrollbar {
-  display: none;
-} */
 .todo-li {
   display: flex;
   flex-direction: row;
@@ -232,6 +228,7 @@ fieldset {
   height: 2rem;
   border: solid 0.1rem var(--dark-color);
   border-radius: 100%;
+  transition: 0.5s cubic-bezier(0.2, 0.89, 0.35, 1.15) all;
 }
 .todo-li div button:hover {
   border: solid 0.2rem var(--dark-color);
@@ -244,18 +241,24 @@ fieldset {
   background-color: var(--dark-color);
 }
 .done div button:before {
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 10rem;
-  border: 0.15rem solid red; */
-
   border-bottom: 0.15rem solid var(--white-color);
   position: absolute;
   content: "";
-  width: 30%;
+  width: 20%;
   height: 50%;
-  transform: rotateZ("45%");
+  top: 10%;
+  left: 40%;
+  transform: rotateZ(45deg);
+}
+.done div button:after {
+  border-bottom: 0.15rem solid var(--white-color);
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 50%;
+  top: 5%;
+  left: 15%;
+  transform: rotateZ(-45deg);
 }
 .done div button:hover {
   background-color: var(--dark-opacity7-color);
