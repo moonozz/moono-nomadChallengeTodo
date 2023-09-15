@@ -17,17 +17,14 @@ const getTime = () => {
 const geoSuccess = (e) => {
   const lat = e.coords.latitude;
   const lon = e.coords.longitude;
-  console.log(e);
 
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-  // console.log(url);
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
       const location = data.name;
       const weather = data.weather[0].main;
       const temp = Math.floor(data.main.temp);
-      // console.log(data.name, data.weather[0].main);
       const weatherCon = document.querySelector(".weather");
 
       weatherCon.innerText = `${location} ${weather} ${temp}\u00b0C`;
