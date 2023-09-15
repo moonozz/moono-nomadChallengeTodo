@@ -50,10 +50,8 @@ const paintTodo = (todoObj) => {
 
   // check true, false 불러오기
   if (parsedTodos && todoObj.done === false) {
-    console.log(todoObj.done);
     li.classList.remove("done");
   } else if (parsedTodos && todoObj.done === true) {
-    console.log(todoObj.done);
     li.classList.add("done");
   }
 
@@ -88,7 +86,6 @@ const doneTodo = (e) => {
         el.done = !el.done;
       }
     });
-    console.log(parsedTodos);
     localTodos();
   };
 
@@ -96,8 +93,6 @@ const doneTodo = (e) => {
     todoLi.classList.add("done");
     findId();
     todos = parsedTodos;
-
-    console.log(parsedTodos);
   } else if (todoLi.classList.value === "todo-li done") {
     todoLi.classList.remove("done");
     findId();
@@ -129,7 +124,6 @@ if (getTodos) {
   const parsedTodos = JSON.parse(getTodos);
   todos = parsedTodos;
   parsedTodos.forEach((el) => {
-    console.log(el);
     paintTodo(el);
   });
 }
