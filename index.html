@@ -33,13 +33,13 @@
 
       <!-- 투두리스트 영역 -->
       <ul class="todo-list">
-        <li>
+        <!-- <li>
           <span>12:34</span>
-          <form>
-            <label>todo 입력하기</label>
-            <input class="todo-check" type="checkbox" name="todo" />
-          </form>
-        </li>
+          <div class="todo-li">
+            <p>todo 입력하기</p>
+            <button class="todo-check" />
+          </div>
+        </li> -->
       </ul>
 
       <!-- 투두 내용 입력 인풋 영역 -->
@@ -48,6 +48,7 @@
           type="text"
           name="todo-input"
           placeholder="todo 내용을 입력해주세요."
+          required
         />
         <button>Enter</button>
       </form>
@@ -55,6 +56,6 @@
     <script src="./src/login.js"></script>
     <script src="./src/todo.js"></script>
     <script src="./src/color.js"></script>
-    <script src="./src/header.js"></script>
+    <script src="./src/header.js" type="module"></script>
   </body>
 </html>

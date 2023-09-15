@@ -4,7 +4,8 @@ const todoInput = document.querySelector("#todo-form input");
 const todoInputBtn = document.querySelector("#todo-form button");
 
 const todo = document.querySelector(".todo-li");
-const todoCheck = document.querySelector(".todo-check");
+const todoText = document.querySelector(".todo-li p");
+const todoCheckBtn = document.querySelector(".todo-li button");
 
 // todo input에 적은거 submit 하기
 const handleTodoSubmit = (e) => {
@@ -30,22 +31,38 @@ const paintTime = () => {
 const paintTodo = (newTodo) => {
   const li = document.createElement("li");
   const span = document.createElement("span");
-  const form = document.createElement("form");
-  const label = document.createElement("label");
-  const input = document.createElement("input");
+  const div = document.createElement("div");
+  const p = document.createElement("p");
+  const button = document.createElement("button");
 
   span.innerText = paintTime();
-  form.classList.add("todo-li");
-  input.classList.add("todo-check");
-  label.innerText = newTodo;
+  div.classList.add("todo-li");
+  button.classList.add("todo-check");
+  button.addEventListener("click", doneTodo);
+  p.innerText = newTodo;
 
-  li.append(span, form);
-  // form.append(label, input);
-  form.appendChild(label);
-  form.appendChild(input);
-  input.setAttribute("type", "checkbox");
+  li.append(span, div);
+  div.append(p, button);
 
   todoList.appendChild(li);
 };
 
+// todo done 관리하기
+const doneTodo = (e) => {
+  e.preventDefault();
+  const txt = e.target.parentElement.children[0];
+
+  if (e.target.className === "todo-check") {
+    // todoText.className = "done";
+    e.target.classList.add("todo-checked");
+    e.target.classList.remove("todo-check");
+    txt.className = "done";
+  } else if (e.target.className === "todo-checked") {
+    e.target.classList.add("todo-check");
+    e.target.classList.remove("todo-checked");
+    txt.classList.remove("done");
+  }
+};
+
 todoForm.addEventListener("submit", handleTodoSubmit);
+todoCheckBtn.addEventListener("click", doneTodo);

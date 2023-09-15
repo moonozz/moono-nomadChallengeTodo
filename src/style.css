@@ -197,7 +197,7 @@ fieldset {
   font-size: 1.2rem;
   color: var(--dark-opacity4-color);
 }
-.todo-list li form {
+.todo-list li div {
   display: flex;
   align-items: center;
   width: 75%;
@@ -207,8 +207,13 @@ fieldset {
   background-color: var(--dark-opacity1-color);
   justify-content: space-between;
 }
-.todo-list li form label {
+.todo-list li div p {
   width: 85%;
+}
+.done {
+  color: var(--dark-opacity4-color);
+  text-decoration-color: var(--dark-opacity4-color);
+  text-decoration-line: line-through;
 }
 .todo-check {
   width: 2rem;
@@ -216,6 +221,15 @@ fieldset {
   border: solid 0.1rem var(--dark-color);
   border-radius: 100%;
 }
+.todo-checked {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  background-color: var(--dark-color);
+}
+/* .todo-check:checked {
+  background-color: var(--dark-color);
+} */
 
 /* todo-input영역 */
 #todo-form {
