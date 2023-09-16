@@ -167,7 +167,7 @@ fieldset {
 }
 @media screen and (max-height: 930px) {
   .login {
-    height: calc(100vh - 4rem);
+    height: calc(100% - 4rem);
     margin: auto;
     border-radius: 4rem;
   }
@@ -181,11 +181,6 @@ fieldset {
 @media screen and (min-height: 931px) {
   .login {
     height: calc(844px + 48px);
-
-    /* position: absolute; */
-    /* top: 50%; */
-    /* left: 50%; */
-    /* transform: translate(-50%, -50%); */
   }
 }
 
