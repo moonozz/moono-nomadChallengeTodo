@@ -148,6 +148,7 @@ fieldset {
 .login {
   display: flex;
   align-items: center;
+  /* width: calc(100% - 6.4rem); */
 
   position: absolute;
   top: 50%;
@@ -155,11 +156,39 @@ fieldset {
   transform: translate(-50%, -50%);
 
   border-radius: 4rem;
-  width: calc(100% - 6.4rem);
-  height: 100%;
   background-color: var(--dark-opacity7-color);
   padding: 0rem 3.2rem;
 }
+@media screen and (max-width: 462px) {
+  .login {
+    width: calc(100vw - 4rem - 4rem);
+    border-radius: 6rem;
+  }
+}
+@media screen and (max-height: 930px) {
+  .login {
+    height: calc(100vh - 4rem);
+    margin: auto;
+    border-radius: 4rem;
+  }
+}
+
+@media screen and (min-width: 463px) {
+  .login {
+    width: 382px;
+  }
+}
+@media screen and (min-height: 931px) {
+  .login {
+    height: calc(844px + 48px);
+
+    /* position: absolute; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+  }
+}
+
 .modal {
   display: flex;
   flex-direction: column;
@@ -168,6 +197,12 @@ fieldset {
   background-color: var(--white-color);
   border-radius: 4rem;
 }
+@media screen and (max-width: 462px) {
+  .modal {
+    width: calc(100vw - 4rem - 4rem - 5rem);
+  }
+}
+
 .modal form {
   display: flex;
   margin-top: 5.6rem;
