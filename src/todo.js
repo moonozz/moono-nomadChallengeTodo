@@ -4,7 +4,6 @@ const todoInput = document.querySelector("#todo-form input");
 const todoInputBtn = document.querySelector("#todo-form button");
 
 const todo = document.querySelector(".todo-li");
-// const todoText = document.querySelector(".todo-li p");
 const todoCheckBtn = document.querySelector(".todo-li div button");
 
 const TODOS_KEY = "todos";
@@ -129,5 +128,4 @@ if (getTodos) {
 }
 
 todoForm.addEventListener("submit", handleTodoSubmit);
-// todoForm.addEventListener("submit", handleTodoSubmit);
 todoCheckBtn.addEventListener("click", doneTodo);
